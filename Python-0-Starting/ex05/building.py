@@ -79,7 +79,7 @@ def formatPrint(dictChar: dict) -> None:
 
 
 def main():
-    '''Main function.'''
+    '''Parse the text and print the result.'''
     text = getFirstArg()
     dictChar = parseText(text)
     formatPrint(dictChar)
