@@ -7,12 +7,13 @@ def isPunctuation(c: str) -> bool:
     '''
     Return True if the character is a punctuation, False otherwise.
     '''
-    return not c in string.punctuation
+    return c not in string.punctuation
 
 
 def strPrintable(s: str) -> bool:
     '''
-    Return True if all characters in the string are printable or the string is empty, False otherwise.
+    Return True if all characters in the string are printable
+    or the string is empty, False otherwise.
     '''
     return all([c.isprintable() and isPunctuation(c) for c in s])
 
@@ -20,7 +21,8 @@ def strPrintable(s: str) -> bool:
 def main():
     '''
     Main function to run the program.
-    It takes two arguments from the command line and prints the result of ft_filter function.
+    It takes two arguments from the command line
+    and prints the result of ft_filter function.
     If the arguments are bad, it prints an error message and exits with code 1.
     '''
     args = sys.argv[1:]
@@ -29,7 +31,7 @@ def main():
             raise AssertionError('the arguments are bad')
         try:
             text = args[0]
-            if strPrintable(text) == False:
+            if strPrintable(text) is False:
                 raise AssertionError('the first argument is not a good string')
             size = int(args[1])
         except ValueError:
