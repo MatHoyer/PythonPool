@@ -1,38 +1,6 @@
 import sys
 import string
 
-from typing import Callable
-
-
-def isUpper(char: str) -> bool:
-    '''Return True if char is an uppercase letter.'''
-    return char in string.ascii_uppercase
-
-
-def isLower(char: str) -> bool:
-    '''Return True if char is a lowercase letter.'''
-    return char in string.ascii_lowercase
-
-
-def isPunctuation(char: str) -> bool:
-    '''Return True if char is a punctuation mark.'''
-    return char in string.punctuation
-
-
-def isSpace(char: str) -> bool:
-    '''Return True if char is a space.'''
-    return char in (' ', '\n')
-
-
-def isDigit(char: str) -> bool:
-    '''Return True if char is a digit.'''
-    return char in string.digits
-
-
-def mySum(text: str, condition: Callable) -> int:
-    '''Do a sum of the characters that match the condition.'''
-    return len([char for char in text if condition(char)])
-
 
 def getFirstArg() -> str:
     '''Return args[0] or None if number of argument is > 1.'''
@@ -45,20 +13,20 @@ def getFirstArg() -> str:
                 s = input('What is the text to count?\n') + '\n'
                 args.append(s)
             except EOFError:
-                sys.exit(1)
+                exit(1)
     except AssertionError as e:
         print(AssertionError.__name__ + ':', e)
-        sys.exit(1)
+        exit(1)
     return args[0]
 
 
 def parseText(text: str) -> dict:
     '''Parse text and return a dict.'''
-    upperLetters = mySum(text, isUpper)
-    lowerLetters = mySum(text, isLower)
-    punctuations = mySum(text, isPunctuation)
-    space = mySum(text, isSpace)
-    digits = mySum(text, isDigit)
+    upperLetters = sum(1 for c in text if c.isupper())
+    lowerLetters = sum(1 for c in text if c.islower())
+    punctuations = sum(1 for c in text if c in string.punctuation)
+    space = sum(1 for c in text if c.isspace())
+    digits = sum(1 for c in text if c.isdigit())
     return {
         'characters': len(text),
         'upper letters': upperLetters,
