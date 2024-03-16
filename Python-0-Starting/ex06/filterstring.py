@@ -7,7 +7,7 @@ def isPunctuation(c: str) -> bool:
     '''
     Return True if the character is a punctuation, False otherwise.
     '''
-    return c not in string.punctuation
+    return c in string.punctuation
 
 
 def strPrintable(s: str) -> bool:
@@ -15,7 +15,7 @@ def strPrintable(s: str) -> bool:
     Return True if all characters in the string are printable
     or the string is empty, False otherwise.
     '''
-    return all([c.isprintable() and isPunctuation(c) for c in s])
+    return all([c.isprintable() and not isPunctuation(c) for c in s])
 
 
 def main():
