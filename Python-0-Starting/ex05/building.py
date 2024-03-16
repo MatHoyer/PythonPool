@@ -3,7 +3,7 @@ import string
 
 
 def getFirstArg() -> str:
-    '''Return args[0] or None if number of argument is > 1.'''
+    '''Return args[0] or exit if number of argument is > 1.'''
     args = sys.argv[1:]
     try:
         if len(args) > 1:
