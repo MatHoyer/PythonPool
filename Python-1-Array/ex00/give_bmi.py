@@ -1,7 +1,7 @@
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
-    weightLen = len(weight)
-    heightLen = len(height)
     try:
+        weightLen = len(weight)
+        heightLen = len(height)
         if weightLen != heightLen or weightLen == 0 or heightLen == 0:
             raise ValueError("The length of the weight or height are not good.")
         bmi = []
@@ -16,8 +16,8 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     boolTab = []
-    bmiLen = len(bmi)
     try:
+        bmiLen = len(bmi)
         if bmiLen == 0:
             raise ValueError("The length of the bmi is not good.")
         for i in range(bmiLen):
