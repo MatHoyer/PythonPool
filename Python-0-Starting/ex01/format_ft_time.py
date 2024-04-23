@@ -1,7 +1,7 @@
 from datetime import datetime
 
 def convertMonth(month: int):
-    months = {
+  months = {
 		1: 'January',
 		2: 'February',
 		3: 'March',
@@ -15,7 +15,7 @@ def convertMonth(month: int):
 		11: 'November',
 		12: 'December'
 	}
-    return months[month]
+  return months[month]
 
 dateComp = { 'day': 1, 'month': 1, 'year': 1970 }
 dateToday = datetime.now()
