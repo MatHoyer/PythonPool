@@ -17,18 +17,19 @@ def ft_green(img):
 
 def ft_blue(img):
 	for row in img:
-		for pixel in row:
-			pixel[0] = 0 #rouge
-			pixel[1] = 0 #vert
+		for pixels in row:
+			pixels[0] = 0 #rouge
+			pixels[1] = 0 #vert
 	return img
 
 def ft_grey(img):
 	for row in img:
-		for pixel in row:
-			median = (pixel[0] + pixel[1] + pixel[2]) / 3
-			pixel[0] = median
-			pixel[1] = median
-			pixel[2] = median
+		for pixels in row:
+			grey = pixels.max()
+			# grey = (int)(pixels.sum() / 3)
+			pixels[0] = grey
+			pixels[1] = grey
+			pixels[2] = grey
 	return img
 	
 def main():
