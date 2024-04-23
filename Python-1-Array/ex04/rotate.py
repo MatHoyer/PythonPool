@@ -9,9 +9,6 @@ def display(array: np.array):
 
 
 def rotate(img, angle=90):
-    height = img.shape[0]
-    width = img.shape[1]
-
     img = np.rot90(img, k=angle//90)
     return img
 
