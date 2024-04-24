@@ -8,28 +8,30 @@ def convertMillions(value):
 
 
 def main():
-    rawData = load("population_total.csv")
+    rawData = load("life_expectancy_years.csv")
     if rawData is None:
         print("File not found")
         return
     try:
-        countryName = "Afghanistan"
+        countryName = "France"
         data = (rawData[rawData["country"] == countryName]).iloc[0]
 
         years = data.index.drop("country").to_numpy().astype(int)
-        values = [convertMillions(value) for value in data.values[1:]]
+        values = [float(value) for value in data.values[1:]]
 
-        plt.plot(years, values, label=f"Millions of people in {countryName}")
+        plt.plot(years, values, label=f"Life expectancy Projection in {countryName}")
 
-        plt.xticks(range(0, years.max(), 50))
+        yearTick = 40
+        plt.xticks(range(0, years.max(), yearTick))
         plt.xlabel("Year")
-        plt.xlim(years.min(), years.max())
+        plt.xlim(years.min() - yearTick/2, years.max() + yearTick/2)
 
-        plt.yticks(range(0, int(max(values)), 5))
-        plt.ylabel("Population (millions)")
-        plt.ylim(0, int(max(values)) + 1)
+        lifeTick = 10
+        plt.yticks(range(0, int(max(values)), lifeTick))
+        plt.ylabel("Life expectancy")
+        plt.ylim(int(min(values)) - lifeTick/2, int(max(values)) + lifeTick/2)
 
-        plt.title(f"Population in {countryName} over the years")
+        plt.title(f"{countryName} Life expectancy Projection")
         plt.legend()
         plt.show()
 
