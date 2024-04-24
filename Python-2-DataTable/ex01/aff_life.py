@@ -2,11 +2,6 @@ from load_csv import load
 import matplotlib.pyplot as plt
 
 
-def convertMillions(value):
-    if isinstance(value, str) and value.endswith("M"):
-        return float(value.replace(",", "").replace("M", ""))
-
-
 def main():
     rawData = load("life_expectancy_years.csv")
     if rawData is None:
