@@ -13,7 +13,7 @@ def quartile(lst: list):
 
 
 def calcVariance(lst: list):
-    mean = sum(lst) / len(lst)
+    mean = mean(lst)
     ecaAll = sum((mean - el)**2 for el in lst)
     return ecaAll / len(lst)
 
