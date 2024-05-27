@@ -1,5 +1,7 @@
 import sys
 import string
+import termios
+import tty
 
 
 def getFirstArg() -> str:
@@ -9,11 +11,29 @@ def getFirstArg() -> str:
         if len(args) > 1:
             raise AssertionError('more than one argument is provided')
         if len(args) == 0:
+            s = ''
+            fd = sys.stdin.fileno()
+            old_settings = termios.tcgetattr(fd)
+            print('Please enter a text:')
             try:
-                s = input('What is the text to count?\n') + '\n'
+                tty.setraw(sys.stdin.fileno())
+                while True:
+                    char = sys.stdin.read(1)
+                    if char == '\x04':
+                        if len(s) == 0:
+                            termios.tcsetattr(fd, termios.TCSADRAIN,
+                                              old_settings)
+                            raise AssertionError('no text provided')
+                        break
+                    s += char
+                    sys.stdout.write(char)
+                    sys.stdout.flush()
+                    if char == '\x0d':
+                        print(s)
+                        break
+            finally:
                 args.append(s)
-            except EOFError:
-                exit(1)
+                termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
     except AssertionError as e:
         print(AssertionError.__name__ + ':', e)
         exit(1)
