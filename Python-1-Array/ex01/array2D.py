@@ -2,6 +2,10 @@ import numpy as np
 
 
 def slice_me(family: list, start: int, end: int) -> list:
+    '''
+    Takes a list, a start index and an end index
+    Return a list that contains the elements between the start and end index
+    '''
     try:
         if type(family) is not list:
             raise ValueError('The family should be a list')

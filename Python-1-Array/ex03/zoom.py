@@ -4,11 +4,19 @@ import matplotlib.pyplot as plt
 
 
 def display(array: np.array):
+    '''
+    Takes a numpy array of an image (RGB)
+    Display the image
+    '''
     plt.imshow(array)
     plt.show()
 
 
 def zoom(img, zoomFactor=2):
+    '''
+    Takes a numpy array of an image (RGB) and a zoom factor
+    Return a numpy array of the zoomed image
+    '''
     height = img.shape[0]
     width = img.shape[1]
 
@@ -32,6 +40,9 @@ def zoom(img, zoomFactor=2):
 
 
 def main():
+    '''
+    Load an image, zoom in and display it
+    '''
     img = ft_load("animal.jpeg")
     print(img)
     img = zoom(img)
