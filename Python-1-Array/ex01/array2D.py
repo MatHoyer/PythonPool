@@ -3,7 +3,7 @@ import numpy as np
 
 def slice_me(family: list, start: int, end: int) -> list:
     try:
-        if type(family) != list:
+        if type(family) is not list:
             raise ValueError('The family should be a list')
         start = abs(int(start))
         end = abs(int(end))
