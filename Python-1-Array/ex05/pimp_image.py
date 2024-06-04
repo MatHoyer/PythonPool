@@ -17,7 +17,11 @@ def ft_red(img):
 
 
 def ft_green(img):
-    return img - [255, 0, 255]
+    for row in img:
+        for pixels in row:
+            pixels[0] = 0
+            pixels[2] = 0
+    return img
 
 
 def ft_blue(img):
@@ -42,7 +46,7 @@ def ft_grey(img):
 def main():
     img = ft_load("landscape.jpg")
     print(img)
-    img = ft_grey(img)
+    img = ft_invert(img)
     display(img)
 
 
