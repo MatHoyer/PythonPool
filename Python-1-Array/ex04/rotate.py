@@ -12,12 +12,27 @@ def display(array: np.array):
     plt.show()
 
 
+def rotate_matrix_90(mat: np.array):
+    num_rows = len(mat)
+    num_cols = len(mat[0])
+    result = [[0]*num_rows for _ in range(num_cols)]
+    for i in range(num_rows):
+        for j in range(num_cols):
+            result[j][num_rows-1-i] = mat[i][j]
+    return np.array(result)
+
+
+def mirror_effect(mat: np.array):
+    return mat[:, ::-1]
+
+
 def rotate(img: np.array, angle=90):
     '''
     Takes a numpy array of an image (RGB) and an angle
     Return a numpy array of the rotated image
     '''
-    img = np.rot90(img, k=angle//90)
+    img = rotate_matrix_90(img)
+    img = mirror_effect(img)
     return img
 
 
@@ -27,7 +42,7 @@ def main():
     '''
     img = ft_load("animal.jpeg")
     print(img)
-    img = rotate(img, 180)
+    img = rotate(img)
     display(img)
 
 
