@@ -12,29 +12,39 @@ def display(array: np.array):
     plt.show()
 
 
-def zoom(img, zoomFactor=2):
+def zoom(img: np.array, zoomFactor=2):
     '''
     Takes a numpy array of an image (RGB) and a zoom factor
     Return a numpy array of the zoomed image
     '''
-    height = img.shape[0]
-    width = img.shape[1]
+    try:
+      if type(img) is not np.array:
+          raise ValueError('img is not a numpy array')
+      if type(zoomFactor) is not int or zoomFactor <= 0:
+          raise ValueError('zoomFactor is not an positiv integer')
+      
+      height = img.shape[0]
+      width = img.shape[1]
 
-    centerY = height // 2
-    centerX = width // 2
+      centerY = height // 2
+      centerX = width // 2
 
-    zoomHeight = height // zoomFactor
-    zoomWidth = width // zoomFactor
+      zoomHeight = height // zoomFactor
+      zoomWidth = width // zoomFactor
 
-    startY = centerY - zoomHeight // 2
-    startX = centerX - zoomWidth // 2
-    endY = centerY + zoomHeight // 2
-    endX = centerX + zoomWidth // 2
+      startY = centerY - zoomHeight // 2
+      startX = centerX - zoomWidth // 2
+      endY = centerY + zoomHeight // 2
+      endX = centerX + zoomWidth // 2
 
-    zoomedImg = img[startY:endY, startX:endX]
+      zoomedImg = img[startY:endY, startX:endX]
 
-    print('The shape of the zoomed image is : ', zoomedImg.shape)
-    print(zoomedImg)
+      print('The shape of the zoomed image is : ', zoomedImg.shape)
+      print(zoomedImg)
+
+    except ValueError as e:
+        print(ValueError.__name__, ':', e)
+        exit(1)
 
     return zoomedImg
 

@@ -12,7 +12,7 @@ def display(array: np.array):
     plt.show()
 
 
-def rotate(img, angle=90):
+def rotate(img: np.array, angle=90):
     '''
     Takes a numpy array of an image (RGB) and an angle
     Return a numpy array of the rotated image

@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def display(array: np.array):
+def display(array: np.array) -> np.array:
     '''
     Takes a numpy array of an image (RGB)
     Display the image
@@ -12,7 +12,7 @@ def display(array: np.array):
     plt.show()
 
 
-def ft_invert(img):
+def ft_invert(img: np.array) -> np.array:
     '''
     Takes a numpy array of an image (RGB)
     Return a numpy array of the inverted image
@@ -20,7 +20,7 @@ def ft_invert(img):
     return [255, 255, 255] - img
 
 
-def ft_red(img):
+def ft_red(img: np.array) -> np.array:
     '''
     Takes a numpy array of an image (RGB)
     Return a numpy array of the red image
@@ -28,7 +28,7 @@ def ft_red(img):
     return img * [1, 0, 0]
 
 
-def ft_green(img):
+def ft_green(img: np.array) -> np.array:
     '''
     Takes a numpy array of an image (RGB)
     Return a numpy array of the green image
@@ -40,7 +40,7 @@ def ft_green(img):
     return img
 
 
-def ft_blue(img):
+def ft_blue(img: np.array) -> np.array:
     '''
     Takes a numpy array of an image (RGB)
     Return a numpy array of the blue image
@@ -52,7 +52,7 @@ def ft_blue(img):
     return img
 
 
-def ft_grey(img):
+def ft_grey(img: np.array) -> np.array:
     '''
     Takes a numpy array of an image (RGB)
     Return a numpy array of the grey image
