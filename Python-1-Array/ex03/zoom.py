@@ -18,8 +18,6 @@ def zoom(img: np.array, zoomFactor=2):
     Return a numpy array of the zoomed image
     '''
     try:
-      if type(img) is not np.array:
-          raise ValueError('img is not a numpy array')
       if type(zoomFactor) is not int or zoomFactor <= 0:
           raise ValueError('zoomFactor is not an positiv integer')
       
