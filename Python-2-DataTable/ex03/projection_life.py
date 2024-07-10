@@ -3,7 +3,11 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    rawIncomeData = load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
+    '''
+    Load data and display it
+    '''
+    file = "income_per_person_gdppercapita_ppp_inflation_adjusted.csv"
+    rawIncomeData = load(file)
     rawLifeData = load("life_expectancy_years.csv")
     if rawIncomeData is None or rawLifeData is None:
         print("File not found")

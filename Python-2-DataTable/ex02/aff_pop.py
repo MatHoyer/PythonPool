@@ -3,11 +3,17 @@ import matplotlib.pyplot as plt
 
 
 def convertMillions(value):
+    '''
+    Convert 12M by 12000000 for exemple
+    '''
     if isinstance(value, str) and value.endswith("M"):
         return float(value.replace(",", "").replace("M", ""))
 
 
 def main():
+    '''
+    Load data and display it
+    '''
     rawData = load("population_total.csv")
     if rawData is None:
         print("File not found")
@@ -36,7 +42,9 @@ def main():
         popTick = 20
         plt.yticks(range(0, int(max(values1 + values2)), popTick))
         plt.ylabel("Population")
-        plt.ylim(int(min(values1 + values2)) - popTick/2, int(max(values1 + values2)) + popTick/2)
+        mini = int(min(values1 + values2)) - popTick/2
+        maxi = int(max(values1 + values2)) + popTick/2
+        plt.ylim(mini, maxi)
 
         plt.title("Population Projection")
         plt.legend()

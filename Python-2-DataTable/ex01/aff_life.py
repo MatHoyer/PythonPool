@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 
 
 def main():
+    '''
+    Load data and display it
+    '''
     rawData = load("life_expectancy_years.csv")
     if rawData is None:
         print("File not found")
@@ -14,7 +17,8 @@ def main():
         years = data.index.drop("country").to_numpy().astype(int)
         values = [float(value) for value in data.values[1:]]
 
-        plt.plot(years, values, label=f"Life expectancy Projection in {countryName}")
+        label = f"Life expectancy Projection in {countryName}"
+        plt.plot(years, values, label=label)
 
         yearTick = 40
         plt.xticks(range(0, years.max(), yearTick))
