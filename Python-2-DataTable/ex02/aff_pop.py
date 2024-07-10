@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def convertMillions(value):
     if isinstance(value, str) and value.endswith("M"):
         return float(value.replace(",", "").replace("M", ""))
-    
+
 
 def main():
     rawData = load("population_total.csv")

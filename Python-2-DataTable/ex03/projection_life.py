@@ -3,29 +3,29 @@ import matplotlib.pyplot as plt
 
 
 def main():
-  rawIncomeData = load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
-  rawLifeData = load("life_expectancy_years.csv")
-  if rawIncomeData is None or rawLifeData is None:
-    print("File not found")
-    return
-  
-  try:
-    year = "1900"
-    lifeData = rawLifeData[year]
-    incomeData = rawIncomeData[year]
+    rawIncomeData = load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
+    rawLifeData = load("life_expectancy_years.csv")
+    if rawIncomeData is None or rawLifeData is None:
+        print("File not found")
+        return
 
-    plt.scatter(incomeData, lifeData, alpha=1)
+    try:
+        year = "1900"
+        lifeData = rawLifeData[year]
+        incomeData = rawIncomeData[year]
 
-    plt.xlabel("Gross domestic product")
+        plt.scatter(incomeData, lifeData, alpha=1)
 
-    plt.ylabel("Life expectancy")
+        plt.xlabel("Gross domestic product")
 
-    plt.title(year)
-    plt.show()
+        plt.ylabel("Life expectancy")
 
-  except Exception as e:
-    print(e)
+        plt.title(year)
+        plt.show()
+
+    except Exception as e:
+        print(e)
 
 
 if __name__ == "__main__":
-  main()
+    main()
