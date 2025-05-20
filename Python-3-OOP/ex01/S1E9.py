@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class Character(ABC):
     '''Abstract class for characters'''
     @abstractmethod
-    def __init__(self, name: str, eyes: str, hairs: str, is_alive: bool = True):
+    def __init__(self, name: str, eyes, hairs, is_alive: bool = True):
         '''Initialize the character'''
         self.first_name = name
         self.is_alive = is_alive

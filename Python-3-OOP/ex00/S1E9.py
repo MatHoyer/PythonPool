@@ -12,7 +12,7 @@ class Character(ABC):
     def die(self):
         '''Kill the character'''
         self.is_alive = False
-    
+
 
 class Stark(Character):
     '''Stark familly inherits from character class'''

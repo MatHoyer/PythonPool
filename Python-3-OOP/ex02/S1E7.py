@@ -9,13 +9,13 @@ class Baratheon(Character):
         self.eyes = 'brown'
         self.hairs = 'dark'
 
-
     def __str__(self) -> str:
-        return f"Vector: ('{self.__class__.__name__}', '{self.eyes}', '{self.hairs}')"
-    
-    def __repr__(self) -> str:
-        return f"Vector: ('{self.__class__.__name__}', '{self.eyes}', '{self.hairs}')"
+        name = self.__class__.__name__
+        return f"Vector: ('{name}', '{self.eyes}', '{self.hairs}')"
 
+    def __repr__(self) -> str:
+        name = self.__class__.__name__
+        return f"Vector: ('{name}', '{self.eyes}', '{self.hairs}')"
 
 
 class Lannister(Character):
@@ -25,14 +25,14 @@ class Lannister(Character):
         super().__init__(name, is_alive=is_alive)
 
     def __str__(self) -> str:
-        return f"Vector: ('{self.__class__.__name__}', '{self.eyes}', '{self.hairs}')"
-    
-    def __repr__(self) -> str:
-        return f"Vector: ('{self.__class__.__name__}', '{self.eyes}', '{self.hairs}')"
+        name = self.__class__.__name__
+        return f"Vector: ('{name}', '{self.eyes}', '{self.hairs}')"
 
+    def __repr__(self) -> str:
+        name = self.__class__.__name__
+        return f"Vector: ('{name}', '{self.eyes}', '{self.hairs}')"
 
     @staticmethod
     def create_lannister(name: str, is_alive: bool = True):
         '''Create a Lannister member'''
         return Lannister(name, is_alive)
-    
