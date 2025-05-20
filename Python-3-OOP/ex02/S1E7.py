@@ -10,10 +10,12 @@ class Baratheon(Character):
         self.hairs = 'dark'
 
     def __str__(self) -> str:
+        '''Return the string representation of the Baratheon member'''
         name = self.__class__.__name__
         return f"Vector: ('{name}', '{self.eyes}', '{self.hairs}')"
 
     def __repr__(self) -> str:
+        '''Return the string representation of the Baratheon member'''
         name = self.__class__.__name__
         return f"Vector: ('{name}', '{self.eyes}', '{self.hairs}')"
 
@@ -25,10 +27,12 @@ class Lannister(Character):
         super().__init__(name, is_alive=is_alive)
 
     def __str__(self) -> str:
+        '''Return the string representation of the Lannister family member'''
         name = self.__class__.__name__
         return f"Vector: ('{name}', '{self.eyes}', '{self.hairs}')"
 
     def __repr__(self) -> str:
+        '''Return the string representation of the Lannister family member'''
         name = self.__class__.__name__
         return f"Vector: ('{name}', '{self.eyes}', '{self.hairs}')"
 
