@@ -1,7 +1,6 @@
 from S1E9 import Character
 
 
-
 class Baratheon(Character):
     '''Baratheon familly'''
     def __init__(self, name: str, is_alive: bool = True):
