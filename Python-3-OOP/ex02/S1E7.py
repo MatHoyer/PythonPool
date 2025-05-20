@@ -6,6 +6,7 @@ class Baratheon(Character):
     def __init__(self, name: str, is_alive: bool = True):
         '''Initialize the Baratheon familly member'''
         super().__init__(name, is_alive=is_alive)
+        self.family_name = 'Baratheon'
         self.eyes = 'brown'
         self.hairs = 'dark'
 
@@ -25,6 +26,7 @@ class Lannister(Character):
     def __init__(self, name: str, is_alive: bool = True):
         '''Initialize the Lannister familly member'''
         super().__init__(name, is_alive=is_alive)
+        self.family_name = 'Lannister'
 
     def __str__(self) -> str:
         '''Return the string representation of the Lannister family member'''

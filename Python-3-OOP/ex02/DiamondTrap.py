@@ -5,8 +5,7 @@ class King(Baratheon, Lannister):
     '''King class that inherits from Baratheon and Lannister classes'''
     def __init__(self, name: str, is_alive: bool = True):
         '''Initialize the King member'''
-        Baratheon.__init__(self, name, is_alive)
-        Lannister.__init__(self, name, is_alive)
+        super().__init__(name, is_alive)
 
     def set_eyes(self, eyes: str):
         '''Set the eyes color of the King member'''

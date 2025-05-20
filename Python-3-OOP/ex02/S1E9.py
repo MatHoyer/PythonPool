@@ -8,7 +8,6 @@ class Character(ABC):
         '''Initialize the character'''
         self.first_name = name
         self.is_alive = is_alive
-        self.family_name = self.__class__.__name__
 
     def die(self):
         '''Kill the character'''
@@ -20,3 +19,4 @@ class Stark(Character):
     def __init__(self, name: str, is_alive: bool = True):
         '''Initialize the Stark familly member'''
         super().__init__(name, is_alive)
+        self.family_name = 'Stark'
