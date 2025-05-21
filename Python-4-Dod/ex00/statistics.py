@@ -52,6 +52,6 @@ def ft_statistics(*args, **kwargs):
         if not args:
             print("ERROR")
             continue
-        print(func(lst))
+        print(value, ':', func(lst))
 
     return
