@@ -1,15 +1,21 @@
 def mean(lst: list):
     '''Calculates the mean of a list of numbers'''
+    if (not lst or len(lst) == 0):
+        return 0
     return (sum(lst) / len(lst))
 
 
 def median(lst: list):
     '''Calculates the median of a list of numbers'''
+    if (not lst or len(lst) == 0):
+        return 0
     return (lst[len(lst) // 2])
 
 
 def quartile(lst: list):
     '''Calculates the first and third quartile of a list of numbers'''
+    if (not lst or len(lst) == 0):
+        return 0
     first = len(lst) // 4
     last = len(lst) - first - 1
     return ([float(lst[first]), float(lst[last])])
@@ -17,6 +23,8 @@ def quartile(lst: list):
 
 def calcVariance(lst: list):
     '''Calculates the variance of a list of numbers'''
+    if (not lst or len(lst) == 0):
+        return 0
     meanVar = mean(lst)
     ecaAll = sum((meanVar - el)**2 for el in lst)
     return ecaAll / len(lst)
