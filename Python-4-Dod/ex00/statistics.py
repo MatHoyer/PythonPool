@@ -33,7 +33,7 @@ def var(lst: list):
 
 
 def ft_statistics(*args, **kwargs):
-    '''Calculates the mean, median, quartile, standard deviation and variance of a list of numbers'''
+    '''Calculates all stats of a list of numbers'''
     lst = None
     if args:
         lst = list(args)
