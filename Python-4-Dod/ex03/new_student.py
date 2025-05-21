@@ -13,9 +13,9 @@ class Student:
     '''Class representing a student.'''
     name: str
     surname: str
-    id: str = field(default_factory=generate_id, init=False)
-    login: str = field(init=False)
     active: bool = True
+    login: str = field(init=False)
+    id: str = field(default_factory=generate_id, init=False)
 
     def __post_init__(self):
         '''Post-initialization processing.'''
